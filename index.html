@@ -1,0 +1,138 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="bookmark.png" type="image/x-icon" />
+
+    <title>Book Mark</title>
+  </head>
+  <body>
+    <div class="home min-vh-100">
+      <div
+        class="Bookmarker d-flex flex-column position-relative align-items-center justify-content-center pt-5"
+      >
+        <h1 class="header position-relative">Bookmarker</h1>
+      </div>
+      <div class="bookfav col-md-6 m-auto p-2 mt-4">
+        <h2 class="text-center">
+          <i class="fa-solid fa-bookmark fs-3"></i> Bookmark your favourite
+          Sites <i class="fa-solid fa-bookmark fs-3"></i>
+        </h2>
+      </div>
+
+      <div class="container mt-4 py-2">
+        <form>
+          <label class="fw-bold" for="siteName"
+            ><i class="fa-solid fa-book-bookmark pe-2"></i> Site Name
+          </label>
+          <input
+            type="text"
+            class="form-control my-2"
+            placeholder="Bookmark Name"
+            id="siteName"
+          />
+          <label class="fw-bold mt-3" for="siteUrl"
+            ><i class="fa-solid fa-link pe-1"></i> Site URL
+          </label>
+          <input
+            type="text"
+            class="form-control my-2"
+            placeholder="Website URL"
+            id="siteUrl"
+          />
+        </form>
+        <div class="text-center mt-4 mb-5">
+          <button type="button" class="btn btn-success px-5 me-2" id="Submit">
+            Submit
+          </button>
+          <button
+            onclick=" Delete()"
+            type="button"
+            id="deleteall"
+            class="btn btn-danger px-4"
+          >
+            Clear Bookmarks
+          </button>
+        </div>
+
+        <table class="table text-dark table-light text-center">
+          <thead class="fw-bolder">
+            <tr>
+              <th scope="col">Index</th>
+              <th scope="col">Website Name</th>
+              <th scope="col">Visit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <!-- <tr>
+              <td>1</td>
+              <td>Facebook</td>
+              <td>
+                <a
+                  href="https://www.facebook.com/groups/ElzeroWebSchool"
+                  target="_blank"
+                  ><button type="button" class="btn text-white btn-visit">
+                    <i class="fa-solid fa-eye text-white"></i> Visit
+                  </button></a
+                >
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger">
+                  <i class="fa-solid fa-trash-can"></i> Delete
+                </button>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header py-4">
+            <i class="fa-solid fa-circle text-danger"></i
+            ><i class="fa-solid fa-circle text-warning mx-2"></i
+            ><i class="fa-solid fa-circle text-success"></i>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="fw-bold fs-5">
+              Site Name or URL is not valid, Please follow the rules below:
+            </p>
+            <p class="text-dark fw-semibold">
+              <i class="fa-regular fa-circle-right text-danger"></i> Site name
+              must contain at least 3 characters.
+            </p>
+            <p class="text-dark fw-semibold">
+              <i class="fa-regular fa-circle-right text-danger"></i> Site URL
+              must be a valid one.
+            </p>
+            <p class="text-dark fw-semibold">
+              <i class="fa-regular fa-circle-right text-danger"></i> Site name /
+              URL already exists. Please enter different one.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
